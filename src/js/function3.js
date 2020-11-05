@@ -3,10 +3,13 @@ const APIs = {
   ApiPlayers: "https://www.balldontlie.io/api/v1/players?per_page=100&page=",
 };
 
+
 const html = {
   content: document.getElementById("content"),
+  contentPlayers: document.getElementById("contentPlayers"),
   list: document.getElementById("list"),
 };
+
 
 const fetchData = (api_rest, callback) => {
   fetch(api_rest)
@@ -17,15 +20,22 @@ const fetchData = (api_rest, callback) => {
     .catch((error) => console.log(`Error: ${error}`));
 };
 
+
 const openApi = (API) => {
   html.content.innerHTML = "";
   fetchData(API, function (data) {
     data.data.forEach((item) => {
       html.list.innerHTML += `
-      <li><a onclick="clear()">${item.full_name}</a></li>
+      <li><a onclick="clearPlayers('${APIs.ApiPlayers + 0}' ,'${
+        item.abbreviation
+      }');">${
+        item.full_name
+      }</a></li>
       `;
       html.content.innerHTML += `
-      <div class="cards" onclick="searchPlayers(${APIs.ApiPlayers + 0} ,${item.abbreviation})">
+      <div class="cards" onclick="clearPlayers('${APIs.ApiPlayers + 0}' ,'${
+        item.abbreviation
+      }'); ">
         <div class="contenedorTextos">
             <h1>${item.abbreviation}</h1>
             <small class="txtLabel">city</small>
@@ -49,16 +59,20 @@ const openApi = (API) => {
 };
 
 
-function clear() {
-  console.log(preuba)
-  html.content.innerHTML = "";
+const clearPlayers = (API, nameTeam) =>{
+  html.content.style.display = 'none';
+  html.contentPlayers.style.display = '';
+  html.contentPlayers.innerHTML = '';
+  searchPlayers(API, nameTeam);
 }
 
+
 const searchPlayers = (API, nameTeam) => {
+  setTimeout(() => {
   fetchData(API, function (data) {
     data.data.forEach((item) => {
       if (item.team.abbreviation == nameTeam) {
-        html.content.innerHTML += `
+        html.contentPlayers.innerHTML += `
         <div class="cards">
           <div class="contenedorTextos">
               <h1>${item.first_name} last_name</h1>
@@ -77,11 +91,16 @@ const searchPlayers = (API, nameTeam) => {
       }
     });
     let next_page = data.meta.next_page;
-    if (next_page != null)
-      searchPlayers(APIs.ApiPlayers + next_page, nameTeam);
+    if (next_page != null) searchPlayers(APIs.ApiPlayers + next_page, nameTeam);
   });
+  }, 500);
+
 };
 
-openApi(APIs.ApiTeams);
+const function3 = () =>{
+  html.content.style.display = '';
+  html.contentPlayers.style.display = 'none';
+  html.contentPlayers.innerHTML = '';
+}
 
-//searchPlayers(APIs.ApiPlayers + 0 , "OKC");
+openApi(APIs.ApiTeams);

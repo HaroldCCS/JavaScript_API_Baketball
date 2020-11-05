@@ -9,7 +9,7 @@ body {
   background-color: #20438B;
 }
 .contenedorHeder,
-#content,
+.content,
 #list {
   border-radius: 20px;
   display: flex;
@@ -29,7 +29,7 @@ body {
   width: 100%;
   margin-top: 50px;
 }
-#content,
+.content,
 #list {
   width: auto;
   margin: auto;
@@ -47,7 +47,7 @@ body {
   color: white;
 }
 
-#content{
+.content{
   padding: 0px 25px;
 }
 .cards,
