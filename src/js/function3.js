@@ -3,13 +3,11 @@ const APIs = {
   ApiPlayers: "https://www.balldontlie.io/api/v1/players?per_page=100&page=",
 };
 
-
 const html = {
   content: document.getElementById("content"),
   contentPlayers: document.getElementById("contentPlayers"),
   list: document.getElementById("list"),
 };
-
 
 const fetchData = (api_rest, callback) => {
   fetch(api_rest)
@@ -20,7 +18,6 @@ const fetchData = (api_rest, callback) => {
     .catch((error) => console.log(`Error: ${error}`));
 };
 
-
 const openApi = (API) => {
   html.content.innerHTML = "";
   fetchData(API, function (data) {
@@ -28,9 +25,7 @@ const openApi = (API) => {
       html.list.innerHTML += `
       <li><a onclick="clearPlayers('${APIs.ApiPlayers + 0}' ,'${
         item.abbreviation
-      }');">${
-        item.full_name
-      }</a></li>
+      }');">${item.full_name}</a></li>
       `;
       html.content.innerHTML += `
       <div class="cards" onclick="clearPlayers('${APIs.ApiPlayers + 0}' ,'${
@@ -58,17 +53,14 @@ const openApi = (API) => {
   });
 };
 
-
-const clearPlayers = (API, nameTeam) =>{
-  html.content.style.display = 'none';
-  html.contentPlayers.style.display = '';
-  html.contentPlayers.innerHTML = '';
+const clearPlayers = (API, nameTeam) => {
+  html.content.style.display = "none";
+  html.contentPlayers.style.display = "";
+  html.contentPlayers.innerHTML = "";
   searchPlayers(API, nameTeam);
-}
-
+};
 
 const searchPlayers = (API, nameTeam) => {
-  setTimeout(() => {
   fetchData(API, function (data) {
     data.data.forEach((item) => {
       if (item.team.abbreviation == nameTeam) {
@@ -93,14 +85,12 @@ const searchPlayers = (API, nameTeam) => {
     let next_page = data.meta.next_page;
     if (next_page != null) searchPlayers(APIs.ApiPlayers + next_page, nameTeam);
   });
-  }, 500);
-
 };
 
-const function3 = () =>{
-  html.content.style.display = '';
-  html.contentPlayers.style.display = 'none';
-  html.contentPlayers.innerHTML = '';
-}
+const function3 = () => {
+  html.content.style.display = "";
+  html.contentPlayers.style.display = "none";
+  html.contentPlayers.innerHTML = "";
+};
 
 openApi(APIs.ApiTeams);
