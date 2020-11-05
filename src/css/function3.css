@@ -6,7 +6,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #20438B;
+  background-color: #20438b;
 }
 .contenedorHeder,
 .content,
@@ -16,13 +16,12 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-
 }
 
 .contenedorHeder {
   width: 90%;
   margin: auto;
-  background-color: #CD2B46;
+  background-color: #cd2b46;
   padding: 10px;
 }
 #contendorGeneral {
@@ -40,14 +39,14 @@ body {
   padding-top: 30px;
   width: 250px;
   margin-top: 0px;
-  background-color: #CD2B46;
+  background-color: #cd2b46;
   float: left;
   text-align: left;
   justify-content: left;
   color: white;
 }
 
-.content{
+.content {
   padding: 0px 25px;
 }
 .cards,
@@ -112,8 +111,8 @@ nav {
   align-items: center;
 }
 button {
-    margin-top: 15px;
-    margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   width: 120px;
   background: #ffe600;
   padding: 15px;
@@ -124,13 +123,14 @@ button {
   cursor: pointer;
   transition: 1s;
 }
-button:hover, .icoFlecha:hover {
+button:hover,
+.icoFlecha:hover {
   transition: 1s;
   border: 10px white;
   background-color: white;
 }
 
-h1{
+h1 {
   color: white;
   text-align: center;
   margin-bottom: 6px;
