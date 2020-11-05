@@ -12,14 +12,9 @@
 <body>
     <main>
         <section class="container-fluid px-0 ">
-            <div class="bg-info">
-                <nav class="nav-header">
-                  <a href="function1.html"><button type="button" class="rainbow-button" id="changeFunction1">Jugadores</button></a>
-
-                  <a href="function2.html"><button class="rainbow-button" id="changeFunction2">Partidos</button></a>
-                  
-                  <a href="function3.html"><button type="button" class="rainbow-button" id="changeFunction3" >Equipos</button></a>
-                </nav>
+            <div class="bg-info text-center">
+              <h1 class="text-center bg-dark border-bottom border-dark mb-0">Balldontlie API</h1>
+                
             </div>
             <div class="bg-warning py-3 text-center text-dark d-block  justify-content-around">
                 <h3 class="mb-2 mr-2 text-center">Juegos</h3>
@@ -36,6 +31,13 @@
                   </div>
                   <div id="msg" class="font-weight-bold mt-2"></div>
             </div>
+            <nav class="nav-header mb-0 bg-info py-0">
+              <a href="function1.html"><button type="button" class="rainbow-button" id="changeFunction1">Jugadores</button></a>
+
+              <a href="function2.html"><button class="rainbow-button" id="changeFunction2">Partidos</button></a>
+              
+              <a href="function3.html"><button type="button" class="rainbow-button" id="changeFunction3" >Equipos</button></a>
+            </nav>
         </section>
         <section id="games" class="d-flex flex-wrap p-3 justify-content-around align-content-stretch"></section>
     </main>

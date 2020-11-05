@@ -11,7 +11,7 @@ function fetchApi(api, callback) {
         callback(json);
     })
     .catch((error) => {
-        console.log("pailaasdasdas")
+        console.log("Error", error)
     });
 } 
 
@@ -76,7 +76,7 @@ criterio.addEventListener('keyup', function () {
             
             gamesSection.innerHTML = "";
             api = 'https://www.balldontlie.io/api/v1/games?' + filtro + '=' + criterio.value;
-            console.log(criterio.value);
+            
             fillGamesSection(api);
         }
         
