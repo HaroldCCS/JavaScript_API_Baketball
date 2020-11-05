@@ -66,6 +66,25 @@ selectplayer.addEventListener("click", (event) => {
 
     const statistics = document.querySelector(".stats-box");
 
+    var playerFull = document.querySelector(".input").value;
+
+    axios
+    .get("https://www.googleapis.com/youtube/v3/search", {
+      params: {
+        part: "snippet",
+        maxResults: 5,
+        type: "video",
+        key: "AIzaSyD7jZxnhSSSz8MouLuy206_AqN7sl5lg_w",
+        q: playerFull + " nba basketball highlights",
+      },
+    })
+    .then(function (response) {
+      const vidID = response.data.items[0].id.videoId;
+      const https = "https://";
+      const videoSrc = "www.youtube.com/embed/" + vidID + "?showinfo=0&enablejsapi=1&origin=http://localhost:8080/function1.html";
+      document.querySelector("iframe").setAttribute("src", https + videoSrc);
+    });
+
     //Estadisticas del jugador
     statistics.innerHTML = `
         <div class="indy-stat">
@@ -150,6 +169,7 @@ selectplayer.addEventListener("click", (event) => {
               </div>
         `;
   })();
+
 });
 
 // Se establece un temporizador para ejecutar la función
