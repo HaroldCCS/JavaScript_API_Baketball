@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.css">
+    <style>
+        @font-face{
+            font-family: Product Sans;
+            src: url(src/css/font.ttf);
+            font-weight: normal;
+        }
+        body{
+            font-family: 'Product Sans', sans-serif !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>Juegos | Balldontlie API</title>
+</head>
+<body>
+    <main>
+        <section class="container-fluid px-0 ">
+            <div class="bg-info py-3 text-center"><h1 class="mb-0">Balldontlie API</h1></div>
+            <div class="bg-warning py-3 text-center text-dark d-block  justify-content-around">
+                <h3 class="mb-2 mr-2 text-center">Juegos</h3>
+                <div class="input-group w-50 mx-auto">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text">Filtro</label>
+                    </div>
+                    <select class="custom-select" id="filtro">
+                      <option selected disabled value="">Escoja el filtro...</option>
+                      <option value="seasons[]">Temporada</option>
+                      <option value="team_ids[]">ID Equipo</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Ingrese el criterio de búsquedad" id="criterio">
+                  </div>
+                  <div id="msg" class="font-weight-bold mt-2"></div>
+            </div>
+        </section>
+        <section id="games" class="d-flex flex-wrap p-3 justify-content-around align-content-stretch"></section>
+    </main>
+    <script src="src/js/function2.js"></script>
+</body>
+</html>
