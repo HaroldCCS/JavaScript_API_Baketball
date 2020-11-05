@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #20438B;
+}
+.contenedorHeder,
+#content,
+#list {
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.contenedorHeder {
+  width: 90%;
+  margin: auto;
+  background-color: #CD2B46;
+  padding: 10px;
+}
+#contendorGeneral {
+  width: 100%;
+  margin-top: 50px;
+}
+#content,
+#list {
+  width: auto;
+  margin: auto;
+}
+
+#list {
+  padding: 0px;
+  padding-top: 30px;
+  width: 250px;
+  margin-top: 0px;
+  background-color: #CD2B46;
+  float: left;
+  text-align: left;
+  justify-content: left;
+  color: white;
+}
+
+#content{
+  padding: 0px 25px;
+}
+.cards,
+.cardsBig {
+  width: 200px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.103);
+  border-radius: 25px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cardsBig {
+  width: 400px;
+}
+.contenedorTextos {
+  width: 95%;
+  margin-top: 10px;
+}
+
+.txtLabel {
+  font-weight: 300;
+  margin: 0;
+  color: white;
+}
+
+.txtTitulo {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.icoFlecha {
+  width: 100px;
+  background: #ffe600c7;
+  border-radius: 100px;
+  transition: 1s;
+}
+
+li {
+  padding: 10px 23px;
+  transition: 1s;
+}
+a {
+  cursor: pointer;
+}
+li:hover {
+  transition: 1s;
+  background-color: #1919195d;
+  border-radius: 20px;
+}
+nav {
+  width: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  width: 120px;
+  background: #ffe600;
+  padding: 15px;
+  color: black;
+  text-decoration: solid;
+  border: 0px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 1s;
+}
+button:hover, .icoFlecha:hover {
+  transition: 1s;
+  border: 10px white;
+  background-color: white;
+}
+
+h1{
+  color: white;
+  text-align: center;
+  margin-bottom: 6px;
+}
