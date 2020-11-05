@@ -1,0 +1,41 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: transparent;
+	background-image: url(https://vanguardia.com.mx/sites/default/files/styles/paragraph_image_large_desktop_1x/public/nba_logo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.nav-header {
+  width: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.rainbow-button {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: auto;
+  background: #1c438b;
+  padding: 15px;
+  color: #fff;
+  font-weight: bolder;
+  text-decoration: solid;
+  border: 5px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 1s;
+
+
+}
+.rainbow-button:hover{
+	transition: 1.5s;
+	transform: scale(1.1);
+}
+.imageBoton{
+	width: 160px;
+}
