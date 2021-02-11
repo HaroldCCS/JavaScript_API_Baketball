@@ -1,0 +1,24 @@
+html += `<div class="cards">`;
+html += `<div class="contenedorTextos">`;
+html += `<small class="txtLabel">Nombre completo:</small>`;
+html += `<p class="txtTitulo">${equipos.full_name} (${equipos.abbreviation})</p>`;
+html += `<small class="txtLabel">Ciudad:</small>`;
+html += `<small class="txtLabel">Ciudad:</small>`;
+html += `<p class="txtTitulo">${equipos.city}</p>`;
+html += `<small class="txtLabel">Conferencia:</small>`;
+html += `<p class="txtTitulo">${equipos.conference}</p>`;
+html += `<button type="text" onclick="mostrarjugadores('${equipos.id}')" class="txtP">Jugadores</button>`;
+html += `</div>`;
+html += `</div>`;
+
+html += `<div class="cards">`;
+html += `<div class="contenedorTextos">`;
+html += `<p class="txtTitulo">${jugador.first_name}  ${jugador.last_name}</p>`;
+html += `<small class="txtLabel">Posicion:</small>`;
+html += `<p class="txtTitulo">${jugador.position} </p>`;
+html += `<small class="txtLabel">Equipo:</small>`;
+html += `<p class="txtTitulo">${jugador.team.full_name} (${jugador.team.abbreviation})</p>`;
+html += `<small class="txtLabel">Division:</small>`;
+html += `<p class="txtTitulo">${jugador.team.division}</p>`;
+html += `</div>`;
+html += `</div>`;
